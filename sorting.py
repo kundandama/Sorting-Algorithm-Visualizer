@@ -54,7 +54,27 @@ def bubble_sort(nums):  # n^2
                 # Set the flag to True so we'll loop again
                 swapped = True
 
-
+def odd_even_sort(nums):
+	'''
+	variation of bubble sort
+	perform bubble sort on ord indexed elements
+	then perform bubble sort on even indexed elements
+	'''
+	Sorted = 0
+	while Sorted == 0:
+		Sorted = 1
+		temp = 0
+		for i in range(1, nums.get_len()-1, 2): 
+			if nums.values[i+1] < nums.values[i]: 
+				nums.swap(i,i+1) 
+				Sorted = 0
+				  
+		for i in range(0, nums.get_len()-1, 2): 
+			if nums.values[i+1] < nums.values[i]: 
+				nums.swap(i,i+1) 
+				Sorted = 0
+		
+				
 def selection_sort(nums):  # n^2
     # This value of i corresponds to how many values were sorted
     for i in range(nums.get_len()):
